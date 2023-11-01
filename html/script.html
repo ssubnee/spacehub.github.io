@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+
+<html lang="en" dir="ltr">
+  <head>
+    <script src="./js/includeHTML.js"></script>
+    <link rel="stylesheet" href="../css/table.css">
+  </head>
+<body>
+
+<!-- Section -->
+<div include-html="../index.html"></div>
+<script>includeHTML();</script>
+<div 
+<section class="home-section">
+  <h2>Making HTML dropdowns not suck</h2>
+  
+  <span class="custom-dropdown">
+    <select name="standard">
+      <option value="CII">주요정보통신기반시설 취약점 분석평가 기준</option>
+      <option value="EFI">전자금융기반시설 보안 취약점 평가기준</option>  
+      <option value="CCE">KISA 클라우드 보안설정(CCE)</option>
+      <option value="SCO">중소기업 통제항목</option>
+    </select>
+  </span>
+
+  <span class="custom-dropdown">
+    <select name="infra-big">
+      <option value="SV">Server</option>
+      <option value="DB">DBMS</option>
+      <option value="NW">Networks</option>
+      <option value="ST">Solutions</option>
+      <option value="PC">PC</option>
+    </select>
+  </span>
+
+  <span class="custom-dropdown">
+    <select name="infra-small">
+      <option value="WIN">Windows</option>
+      <option value="LIX">Linux</option>
+      <option value="MYS">MySQL</option>
+      <option value="MAR">MariaDB</option>
+      <option value="MSS">MSSQL</option>
+      <option value="ORA">Oracle</option>
+      <option value="PST">PostgreSQL</option>
+      <option value="MAC">Mac</option>
+    </select>
+  </span>
+  
+</section>
+
+</div>
+</body>
