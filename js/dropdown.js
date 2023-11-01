@@ -1,23 +1,30 @@
 document.addEventListener('DOMContentLoaded', function() {
     var dropdown1 = document.getElementById('standard');
-    var dropdown2 = document.getElementById('infra-big');
-    var dropdown3 = document.getElementById('infra-small');
-    var elementToActivate = document.getElementById('elementToActivate');
+    var dropdown2 = document.getElementById('infra1');
+    var dropdown3 = document.getElementById('infra2');
+    
+    // 드롭다운 2의 옵션을 가져와 배열에 저장
+    var dropdown2Options = dropdown2.options;
+    var dropdown3Options = dropdown3.options;
 
-    dropdown1.addEventListener('change', checkConditions);
-    dropdown2.addEventListener('change', checkConditions);
-    dropdown3.addEventListener('change', checkConditions);
-
-    function checkConditions() {
+    dropdown1.addEventListener('change', function() {
         var selectedOption1 = dropdown1.value;
         var selectedOption2 = dropdown2.value;
-        var selectedOption3 = dropdown3.value;
-
-        // 원하는 조건에 따라 요소를 활성화 또는 비활성화합니다.
-        if (selectedOption1 === '주요정보통신기반시설 취약점 분석평가 기준' && selectedOption2 === 'Networks') {
-            elementToActivate.style.display = 'block'; // 활성화
-        } else {
-            elementToActivate.style.display = 'none'; // 비활성화
+        
+        // 이전에 선택된 옵션들을 모두 활성화
+        for (var i = 0; i < dropdown2Options.length; i++) {
+            dropdown2Options[i].disabled = false;
         }
-    }
+        // 이전에 선택된 옵션들을 모두 활성화
+        for (var i = 0; i < dropdown3Options.length; i++) {
+            dropdown3Options[i].disabled = false;
+        }
+        
+        if (selectedOption2 === 'DBMS') {
+            // 'a'가 선택된 경우, 특정 옵션들을 비활성화
+            dropdown3Options[1].disabled = true;
+            dropdown3Options[2].disabled = true;
+            dropdown3Options[8].disabled = true;
+        }
+    });
 });
